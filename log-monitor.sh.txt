@@ -1,0 +1,47 @@
+#!/bin/bash
+
+# Function to monitor log file
+monitor_log() {
+    # Define log file path
+    logfile="/path/to/your/logfile.log"
+    
+    # Start monitoring loop
+    while :
+    do
+        clear  # Clear the terminal
+        echo "Monitoring log file: $logfile (Press Ctrl+C to stop)"
+        tail -n 10 $logfile  # Display last 10 lines of log file
+        sleep 2  # Adjust sleep time as needed
+    done
+}
+
+# Function to analyze log file
+analyze_log() {
+    # Define log file path
+    logfile="/path/to/your/logfile.log"
+    
+    # Analyze log file
+    echo "Analyzing log file: $logfile"
+    # Example: Count occurrences of error messages
+    error_count=$(grep -c "ERROR" $logfile)
+    echo "Number of error messages: $error_count"
+    # Example: Generate summary report of top error messages
+    echo "Top error messages:"
+    grep "ERROR" $logfile | sort | uniq -c | sort -nr | head -n 5
+}
+
+# Main menu
+echo "1. Monitor log file"
+echo "2. Analyze log file"
+echo "3. Exit"
+
+# Read user choice
+read -p "Enter your choice: " choice
+
+# Perform action based on user choice
+case $choice in
+    1) monitor_log ;;
+    2) analyze_log ;;
+    3) echo "Exiting..." ;;
+    *) echo "Invalid choice" ;;
+esac
