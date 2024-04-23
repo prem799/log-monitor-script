@@ -1,0 +1,18 @@
+# Log File Monitoring and Analysis Script
+
+## Description
+This script provides functionalities to monitor and analyze log files.
+
+## Usage
+1. Clone the repository.
+2. Ensure you have bash installed on your system.
+3. Modify the script to specify the path of the log file you want to monitor/analyze.
+4. Run the script using the command: `./log-monitor.sh`.
+5. Follow the on-screen menu to choose the desired action (monitor or analyze).
+6. To stop monitoring, press Ctrl+C.
+
+## Dependencies
+- Bash
+
+## Repository
+The script is hosted on GitHub: [log-monitor-script](https://github.com/prem799/log-monitor-script.git)
